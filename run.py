@@ -60,6 +60,7 @@ ships_found = 0
 turn = 0
 while True:
     print("\nTurn", turn + 1)
+    turn += 1
     # user guessing row or column where the ship is.   
     guess_row_input = input("Guess Row: (Or press Enter to quit!) ")
     guess_col_input = input("guess Col: (Or press enter to quit!) ")
@@ -83,22 +84,18 @@ while True:
     if ships_found == num_ship:
         print("You've sunk all (3) ships!")
         break
+
+else:
+    if guess_row not in range(8) or guess_col not in range(8):
+       print("Not even close! Try again!")
+    elif board[guess_row][guess_col] == "X" or board[guess_row][guess_col] == "S":
+         print("you tried that one already!")
     else:
-        if guess_row not in range(8) or guess_col not in range(8):
-            print("Not even close! Try again!")
-    elif:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        print("You missed the Ship!!!!\n")
+        board[guess_row][guess_col] = "X"
+        if turn == 9:
+            print("Game Over .....")
     
+    print_board(board)
+
+input("\nPress Enter to Exit the game!")
