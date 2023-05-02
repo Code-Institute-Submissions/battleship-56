@@ -60,8 +60,37 @@ ships_found = 0
 turn = 0
 while True:
     print("\nTurn", turn + 1)
+    # user guessing row or column where the ship is.   
+    guess_row_input = input("Guess Row: (Or press Enter to quit!) ")
+    guess_col_input = input("guess Col: (Or press enter to quit!) ")
 
+    # if the user decides to leave the game, by pressing Enter. 
+    if not guess_row_input or not guess_col_input:
+        print("Exiting the game!")
+        break
+    # converting user input to integer.     
+    guess_row = int(guess_col_input)
+    guess_col = int(guess_col_input)
+    # if a ship is hit i get's marked by and S
+    if (guess_row, guess_col) in ship_location:
+        print("You hit a BattleShip!")
+        board[guess_row][guess_col] = "S"
+        ship_location.remove((guess_row, guess_col))
+        # increases the the number of ships found
+        ships_found += 1 
     
+    # if the user found all 3 ships breaks the loop. 
+    if ships_found == num_ship:
+        print("You've sunk all (3) ships!")
+        break
+    else:
+        if guess_row not in range(8) or guess_col not in range(8):
+            print("Not even close! Try again!")
+    elif:
+
+
+
+
 
 
 
