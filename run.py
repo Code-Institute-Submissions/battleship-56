@@ -96,8 +96,7 @@ while True:
 else:
     if guess_row not in range(8) or guess_col not in range(8):
         print("Not even close! Try again!")
-    elif
-    board[guess_row][guess_col] == "X" or board[guess_row][guess_col] == "S":
+    elif board[guess_row][guess_col] in ("X", "S"): 
         print("you tried that one already!")
     else:
         print("You missed the Ship!!!!\n")
