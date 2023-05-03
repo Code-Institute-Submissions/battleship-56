@@ -96,14 +96,10 @@ while True:
 else:
     if guess_row not in range(8) or guess_col not in range(8):
         print("Not even close! Try again!")
-    elif board[guess_row][guess_col] in ("X", "S"): 
+    elif board[guess_row][guess_col] in ("X", "S"):
         print("you tried that one already!")
     else:
         print("You missed the Ship!!!!\n")
         board[guess_row][guess_col] = "X"
         if turn == 9:
             print("Game Over .....")
-
-    print_board(board)
-
-input("\nPress Enter to Exit the game!")
